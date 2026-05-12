@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="10dp">
+
+    <TextView
+        android:id="@+id/text_rank"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:textSize="@dimen/world_rankings_row_text_size"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/text_line"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:textSize="@dimen/world_rankings_row_text_size"
+        tools:text="France" />
+</LinearLayout>
