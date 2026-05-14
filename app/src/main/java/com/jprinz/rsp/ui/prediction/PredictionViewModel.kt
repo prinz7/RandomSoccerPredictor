@@ -51,11 +51,12 @@ class PredictionViewModel(application: Application) : AndroidViewModel(applicati
                     .filter { it.isNotEmpty() }
                     .mapIndexedNotNull { index, line ->
                         val parts = line.split(",")
-                        if (parts.size >= 2) {
+                        if (parts.size >= 3) {
                             RankingRow(
                                 rank = index + 1,
-                                teamNameEn = parts[0],
-                                teamNameDe = parts[1]
+                                score = parts[0].toFloatOrNull() ?: 0f,
+                                teamNameEn = parts[1],
+                                teamNameDe = parts[2]
                             )
                         } else null
                     }
@@ -104,8 +105,8 @@ class PredictionViewModel(application: Application) : AndroidViewModel(applicati
         )
 
         // Calculate distribution for both teams
-        val dist1 = getGoalDistribution(team1.rank, team2.rank, maxGoals, rankingInfluence, goalDecay)
-        val dist2 = getGoalDistribution(team2.rank, team1.rank, maxGoals, rankingInfluence, goalDecay)
+        val dist1 = getGoalDistribution(team1.score, team2.score, maxGoals, rankingInfluence, goalDecay)
+        val dist2 = getGoalDistribution(team2.score, team1.score, maxGoals, rankingInfluence, goalDecay)
 
         // Calculate Win/Draw/Win probabilities
         var win1 = 0.0
@@ -162,15 +163,15 @@ class PredictionViewModel(application: Application) : AndroidViewModel(applicati
     }
 
     private fun getGoalDistribution(
-        myRank: Int,
-        opponentRank: Int,
+        myScore: Float,
+        opponentScore: Float,
         maxGoals: Int,
         rankingInfluence: Float,
         goalDecay: Float
     ): DoubleArray {
         val baseLambda = 1.3f
-        val rankDiff = opponentRank - myRank
-        val influence = (rankDiff.toFloat() / 20.0f) * rankingInfluence
+        val scoreDiff = myScore - opponentScore
+        val influence = (scoreDiff / 100.0f) * rankingInfluence
         val lambda = (baseLambda + influence).coerceAtLeast(0.01f)
         
         val weights = DoubleArray(maxGoals + 1)

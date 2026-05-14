@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@id/text_last_updated">
 
         <TextView
-            android:layout_width="48dp"
+            android:layout_width="32dp"
             android:layout_height="wrap_content"
             android:gravity="end"
             android:text="@string/world_rankings_header_rank"
@@ -46,6 +46,14 @@
             android:layout_marginStart="12dp"
             android:layout_weight="1"
             android:text="@string/world_rankings_header_team"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="@string/world_rankings_header_score"
             android:textSize="22sp"
             android:textStyle="bold" />
     </LinearLayout>

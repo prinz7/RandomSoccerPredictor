@@ -41,6 +41,7 @@ class WorldRankingsAdapter : RecyclerView.Adapter<WorldRankingsAdapter.RowViewHo
             
             binding.textRank.text = row.rank.toString()
             binding.textLine.text = teamName
+            binding.textScore.text = String.format(locale, "%.2f", row.score)
         }
     }
 }

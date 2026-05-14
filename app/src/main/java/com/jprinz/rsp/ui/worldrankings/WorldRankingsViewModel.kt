@@ -22,11 +22,12 @@ class WorldRankingsViewModel(application: Application) : AndroidViewModel(applic
                     .filter { it.isNotEmpty() }
                     .mapIndexedNotNull { index, line ->
                         val parts = line.split(",")
-                        if (parts.size >= 2) {
+                        if (parts.size >= 3) {
                             RankingRow(
                                 rank = index + 1,
-                                teamNameEn = parts[0],
-                                teamNameDe = parts[1]
+                                score = parts[0].toFloatOrNull() ?: 0f,
+                                teamNameEn = parts[1],
+                                teamNameDe = parts[2]
                             )
                         } else null
                     }

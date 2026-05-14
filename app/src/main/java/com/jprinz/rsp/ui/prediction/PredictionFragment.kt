@@ -208,8 +208,8 @@ class PredictionFragment : Fragment() {
             getString(R.string.error_invalid_team)
         } else null
 
-        binding.textTeam1Rank.text = team1?.let { getString(R.string.prediction_team_rank, it.rank) } ?: ""
-        binding.textTeam2Rank.text = team2?.let { getString(R.string.prediction_team_rank, it.rank) } ?: ""
+        binding.textTeam1Rank.text = team1?.let { getString(R.string.prediction_team_rank, it.rank, it.score) } ?: ""
+        binding.textTeam2Rank.text = team2?.let { getString(R.string.prediction_team_rank, it.rank, it.score) } ?: ""
 
         binding.buttonPredict.isEnabled = team1Valid && team2Valid
     }

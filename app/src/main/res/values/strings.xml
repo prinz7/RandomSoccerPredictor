@@ -11,6 +11,7 @@
     <string name="world_rankings_last_updated">As of: April 1, 2026</string>
     <string name="world_rankings_header_rank">#</string>
     <string name="world_rankings_header_team">Team</string>
+    <string name="world_rankings_header_score">Score</string>
     <string name="settings_language_label">Language</string>
     <string name="settings_max_goals_label">Max goals per team</string>
     <string name="settings_ranking_influence_label">Ranking difference influence</string>
@@ -21,6 +22,6 @@
     <string name="prediction_probabilities">Win %1$s: %2$.1f%% | Draw: %3$.1f%% | Win %4$s: %5$.1f%%</string>
     <string name="prediction_probabilities_ko">Win %1$s: %2$.1f%% | Win %3$s: %4$.1f%%</string>
     <string name="label_knockout">Knockout match (no draw)</string>
-    <string name="prediction_team_rank">Rank: #%1$d</string>
+    <string name="prediction_team_rank">Rank: #%1$d (%2$.2f)</string>
     <string name="prediction_score_probability">Probability of this score: %1$.1f%%</string>
 </resources>

@@ -10,7 +10,7 @@
 
     <TextView
         android:id="@+id/text_rank"
-        android:layout_width="48dp"
+        android:layout_width="32dp"
         android:layout_height="wrap_content"
         android:gravity="end"
         android:textSize="@dimen/world_rankings_row_text_size"
@@ -24,4 +24,13 @@
         android:layout_weight="1"
         android:textSize="@dimen/world_rankings_row_text_size"
         tools:text="France" />
+
+    <TextView
+        android:id="@+id/text_score"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:maxLines="1"
+        android:textSize="@dimen/world_rankings_row_text_size"
+        tools:text="1877.32" />
 </LinearLayout>

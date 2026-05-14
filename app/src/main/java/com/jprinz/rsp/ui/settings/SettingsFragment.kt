@@ -118,7 +118,7 @@ class SettingsFragment : Fragment() {
         const val KEY_GOAL_DECAY = "goal_decay"
 
         const val DEFAULT_MAX_GOALS = 4
-        const val DEFAULT_RANKING_INFLUENCE = 0.5f
+        const val DEFAULT_RANKING_INFLUENCE = 0.25f
         const val DEFAULT_GOAL_DECAY = 0.25f
     }
 }
