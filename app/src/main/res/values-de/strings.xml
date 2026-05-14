@@ -1,9 +1,13 @@
 <resources>
     <string name="app_name">Random Soccer Predictor</string>
     <string name="title_prediction">Vorhersage</string>
-    <string name="prediction_welcome">Dies ist das Vorhersage-Fragment</string>
     <string name="title_world_rankings">Weltrangliste</string>
     <string name="title_settings">Einstellungen</string>
+    <string name="label_team_1">Mannschaft 1</string>
+    <string name="label_team_2">Mannschaft 2</string>
+    <string name="button_predict">Vorhersagen</string>
+    <string name="prediction_vs">%1$s gegen %2$s</string>
+    <string name="error_invalid_team">Bitte wählen Sie ein gültiges Team aus der Liste</string>
     <string name="world_rankings_last_updated">Stand: 1. April 2026</string>
     <string name="world_rankings_header_rank">#</string>
     <string name="world_rankings_header_team">Team</string>
