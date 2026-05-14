@@ -41,8 +41,8 @@ class SettingsFragment : Fragment() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerLanguage.adapter = adapter
 
-        val currentLocale = AppCompatDelegate.getApplicationLocales()[0]?.language ?: "en"
-        if (currentLocale == "de") {
+        val currentLocale = requireContext().resources.configuration.locales[0].language
+        if (currentLocale.startsWith("de")) {
             binding.spinnerLanguage.setSelection(1)
         } else {
             binding.spinnerLanguage.setSelection(0)
@@ -51,7 +51,8 @@ class SettingsFragment : Fragment() {
         binding.spinnerLanguage.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 val selectedLanguage = if (position == 1) "de" else "en"
-                if (selectedLanguage != currentLocale) {
+                val currentEffective = requireContext().resources.configuration.locales[0].language
+                if (!currentEffective.startsWith(selectedLanguage)) {
                     val appLocale: LocaleListCompat = LocaleListCompat.forLanguageTags(selectedLanguage)
                     AppCompatDelegate.setApplicationLocales(appLocale)
                 }
@@ -117,7 +118,7 @@ class SettingsFragment : Fragment() {
         const val KEY_RANKING_INFLUENCE = "ranking_influence"
         const val KEY_GOAL_DECAY = "goal_decay"
 
-        const val DEFAULT_MAX_GOALS = 4
+        const val DEFAULT_MAX_GOALS = 6
         const val DEFAULT_RANKING_INFLUENCE = 0.25f
         const val DEFAULT_GOAL_DECAY = 0.25f
     }
