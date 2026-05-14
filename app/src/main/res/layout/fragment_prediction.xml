@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context=".ui.prediction.PredictionFragment">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -36,6 +38,15 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/text_team1_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_team1" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layout_team2"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -48,7 +59,7 @@
         app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_team1">
+        app:layout_constraintTop_toBottomOf="@id/text_team1_rank">
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:id="@+id/autoCompleteTeam2"
@@ -66,15 +77,34 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/text_team2_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_team2" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/check_knockout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/label_knockout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_team2_rank" />
+
     <Button
         android:id="@+id/button_predict"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:text="@string/button_predict"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_team2" />
+        app:layout_constraintTop_toBottomOf="@id/check_knockout" />
 
     <TextView
         android:id="@+id/text_prediction_result"
@@ -87,4 +117,28 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/button_predict" />
+
+    <TextView
+        android:id="@+id/text_prediction_score_probability"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintTop_toBottomOf="@id/text_prediction_result" />
+
+    <TextView
+        android:id="@+id/text_probabilities"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/text_prediction_score_probability" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

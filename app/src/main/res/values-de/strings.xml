@@ -12,4 +12,15 @@
     <string name="world_rankings_header_rank">#</string>
     <string name="world_rankings_header_team">Team</string>
     <string name="settings_language_label">Sprache</string>
+    <string name="settings_max_goals_label">Max. Tore pro Mannschaft</string>
+    <string name="settings_ranking_influence_label">Einfluss der Ranglisten-Differenz</string>
+    <string name="settings_goal_decay_label">Wahrscheinlichkeitsabnahme für Tore</string>
+    <string name="settings_hint_title">Funktionsweise</string>
+    <string name="settings_hint_content"><b>Einfluss der Rangliste:</b> Höhere Werte verstärken den Vorteil besser platzierter Teams.\n\n<b>Tor-Abnahme:</b> Höhere Werte verringern die Wahrscheinlichkeit für viele Tore, was zu torärmeren Spielen führt.</string>
+    <string name="prediction_result">%1$s %2$d : %3$d %4$s</string>
+    <string name="prediction_probabilities">Sieg %1$s: %2$.1f%% | Unentschieden: %3$.1f%% | Sieg %4$s: %5$.1f%%</string>
+    <string name="prediction_probabilities_ko">Sieg %1$s: %2$.1f%% | Sieg %3$s: %4$.1f%%</string>
+    <string name="label_knockout">KO-Spiel (kein Unentschieden)</string>
+    <string name="prediction_team_rank">Rang: #%1$d</string>
+    <string name="prediction_score_probability">Wahrscheinlichkeit dieses Ergebnisses: %1$.1f%%</string>
 </resources>

@@ -12,4 +12,5 @@
     <string name="world_rankings_header_rank">#</string>
     <string name="world_rankings_header_team">Team</string>
     <string name="settings_language_label">Language</string>
+    <string name="prediction_score_probability">Probability of this score: %1$.1f%%</string>
 </resources>

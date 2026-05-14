@@ -1,32 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
     tools:context=".ui.settings.SettingsFragment">
 
-    <TextView
-        android:id="@+id/text_settings_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/settings_language_label"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp"/>
-
-    <Spinner
-        android:id="@+id/spinner_language"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="48dp" />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <!-- Placeholder for original TextView if needed, though we probably don't need it anymore -->
-    <TextView
-        android:id="@+id/text_settings"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
+        <TextView
+            android:id="@+id/text_settings_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_language_label"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
 
-</LinearLayout>
+        <Spinner
+            android:id="@+id/spinner_language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_max_goals_label"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
+
+        <SeekBar
+            android:id="@+id/seek_max_goals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="10"
+            android:progress="4"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/text_max_goals_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_ranking_influence_label"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
+
+        <SeekBar
+            android:id="@+id/seek_ranking_influence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="300"
+            android:progress="50"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/text_ranking_influence_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.50"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_goal_decay_label"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
+
+        <SeekBar
+            android:id="@+id/seek_goal_decay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="200"
+            android:progress="25"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/text_goal_decay_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.25"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="32dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="?attr/colorOutline"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_hint_title"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_hint_content"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="4dp"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Placeholder for original TextView if needed -->
+        <TextView
+            android:id="@+id/text_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</ScrollView>
