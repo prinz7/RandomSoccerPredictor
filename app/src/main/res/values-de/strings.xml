@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Random Soccer Predictor</string>
+    <string name="title_prediction">Vorhersage</string>
+    <string name="prediction_welcome">Dies ist das Vorhersage-Fragment</string>
+    <string name="title_world_rankings">Weltrangliste</string>
+    <string name="title_settings">Einstellungen</string>
+    <string name="world_rankings_last_updated">Stand: 1. April 2026</string>
+    <string name="world_rankings_header_rank">#</string>
+    <string name="world_rankings_header_team">Team</string>
+    <string name="settings_language_label">Sprache</string>
+</resources>

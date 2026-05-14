@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".ui.worldrankings.WorldRankingsFragment">
 
+    <TextView
+        android:id="@+id/text_last_updated"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="12dp"
+        android:paddingTop="12dp"
+        android:text="@string/world_rankings_last_updated"
+        android:textSize="14sp"
+        android:textColor="?android:attr/textColorSecondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:id="@+id/header_row"
         android:layout_width="0dp"
@@ -17,7 +30,7 @@
         android:paddingBottom="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/text_last_updated">
 
         <TextView
             android:layout_width="48dp"

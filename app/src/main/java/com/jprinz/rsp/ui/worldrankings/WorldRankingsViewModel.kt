@@ -20,7 +20,16 @@ class WorldRankingsViewModel(application: Application) : AndroidViewModel(applic
                 reader.lineSequence()
                     .map { it.trim() }
                     .filter { it.isNotEmpty() }
-                    .mapIndexed { index, line -> RankingRow(rank = index + 1, line = line) }
+                    .mapIndexedNotNull { index, line ->
+                        val parts = line.split(",")
+                        if (parts.size >= 2) {
+                            RankingRow(
+                                rank = index + 1,
+                                teamNameEn = parts[0],
+                                teamNameDe = parts[1]
+                            )
+                        } else null
+                    }
                     .toList()
             }
         } catch (_: Exception) {
@@ -29,6 +38,6 @@ class WorldRankingsViewModel(application: Application) : AndroidViewModel(applic
     }
 
     companion object {
-        private const val ASSET_NAME = "ranks.txt"
+        private const val ASSET_NAME = "ranks.csv"
     }
 }

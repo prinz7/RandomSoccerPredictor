@@ -35,8 +35,12 @@ class WorldRankingsAdapter : RecyclerView.Adapter<WorldRankingsAdapter.RowViewHo
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(row: RankingRow) {
+            val context = binding.root.context
+            val locale = context.resources.configuration.locales[0]
+            val teamName = if (locale.language == "de") row.teamNameDe else row.teamNameEn
+            
             binding.textRank.text = row.rank.toString()
-            binding.textLine.text = row.line
+            binding.textLine.text = teamName
         }
     }
 }
